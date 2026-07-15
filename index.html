@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TherHappy Leeftijdberekenaar 💛</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Leeftijd">
+<meta name="application-name" content="Leeftijd">
+<meta name="theme-color" content="#F8EC7E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='19.5' y='4' width='5' height='12' rx='2.5' fill='%23B98A00'/%3E%3Crect x='39.5' y='4' width='5' height='12' rx='2.5' fill='%23B98A00'/%3E%3CclipPath id='k'%3E%3Crect x='8' y='11' width='48' height='45' rx='10'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23k)'%3E%3Crect x='8' y='11' width='48' height='45' fill='%23F8EC7E'/%3E%3Crect x='8' y='11' width='48' height='14' fill='%23EAD54A'/%3E%3C/g%3E%3Crect x='8' y='11' width='48' height='45' rx='10' fill='none' stroke='%23E0CB53' stroke-width='2'/%3E%3Cpath d='M32 45.5 C 19 35.5 24 26.5 32 32.2 C 40 26.5 45 35.5 32 45.5 Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --geel:#F8EC7E;
+    --geel-diep:#EAD54A;
+    --geel-zacht:#FBF3B0;
+    --geel-heel-zacht:#FFFDF0;
+    --blauw:#9DD5F9;
+    --blauw-zacht:#E6F4FE;
+    --blauw-diep:#5FB8F0;
+    --roze:#FDB2E8;
+    --groen:#009E23;
+    --inkt:#3A3226;
+    --inkt-zacht:#7A6E58;
+    --wit:#FFFFFF;
+    --lijn:#ECE1A6;
+    --schaduw:0 10px 30px rgba(210,190,70,.20);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+    color:var(--inkt);
+    background:
+      radial-gradient(1200px 500px at 80% -10%, #FBF0A0 0%, rgba(251,240,160,0) 60%),
+      radial-gradient(900px 500px at -10% 110%, #D8ECFB 0%, rgba(216,236,251,0) 55%),
+      linear-gradient(160deg,#FFFDF0 0%,#FCF4C0 100%);
+    min-height:100vh;
+    padding:32px 16px 60px;
+    -webkit-font-smoothing:antialiased;
+  }
+  canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
+
+  .wrap{max-width:560px;margin:0 auto;}
+
+  .kop{text-align:center;margin-bottom:22px;}
+  .logo{
+    width:70px;height:70px;
+    margin:0 auto 12px;position:relative;
+    filter:drop-shadow(0 8px 18px rgba(210,190,70,.4));
+    animation:zwaai 6s ease-in-out infinite;
+  }
+  .logo svg{width:100%;height:100%;display:block;}
+  @keyframes zwaai{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+  h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.4px;}
+  .kop p{margin:0;color:var(--inkt-zacht);font-size:.98rem;}
+
+  .kaart{
+    background:var(--wit);
+    border:1px solid var(--lijn);
+    border-radius:24px;
+    padding:26px 24px;
+    box-shadow:var(--schaduw);
+  }
+
+  label{display:block;font-weight:700;font-size:.92rem;margin:0 0 7px;}
+  .hint{font-weight:400;color:var(--inkt-zacht);font-size:.82rem;}
+  .veld{margin-bottom:18px;}
+  input[type=date]{
+    width:100%;
+    font-size:1.05rem;
+    font-family:inherit;
+    color:var(--inkt);
+    padding:14px 16px;
+    border:2px solid var(--lijn);
+    border-radius:14px;
+    background:var(--geel-heel-zacht);
+    transition:border-color .15s, box-shadow .15s;
+  }
+  input[type=date]:focus{
+    outline:none;border-color:var(--geel-diep);
+    box-shadow:0 0 0 4px rgba(248,236,126,.55);
+  }
+  /* referentiedatum krijgt het lichtblauwe accent */
+  #referentie{background:var(--blauw-zacht);border-color:#C6E6FC;}
+  #referentie:focus{border-color:var(--blauw-diep);box-shadow:0 0 0 4px rgba(157,213,249,.55);}
+
+  .rij{display:flex;gap:10px;align-items:center;margin:-6px 0 20px;flex-wrap:wrap;}
+  .chip{
+    border:2px solid var(--lijn);background:var(--wit);
+    color:var(--inkt-zacht);font-weight:600;font-size:.82rem;
+    padding:7px 13px;border-radius:999px;cursor:pointer;
+    transition:all .15s;
+  }
+  .chip:hover{border-color:var(--blauw-diep);color:var(--inkt);background:var(--blauw-zacht);}
+
+  button.bereken{
+    width:100%;border:none;cursor:pointer;
+    font-family:inherit;font-size:1.15rem;font-weight:800;
+    color:var(--inkt);
+    background:linear-gradient(135deg,var(--geel) 0%,var(--geel-diep) 100%);
+    padding:17px;border-radius:16px;
+    box-shadow:0 8px 20px rgba(222,200,70,.50);
+    transition:transform .12s, box-shadow .12s, filter .12s;
+  }
+  button.bereken:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(222,200,70,.60);filter:brightness(1.02);}
+  button.bereken:active{transform:translateY(0) scale(.99);}
+
+  .foutmelding{
+    display:none;margin-top:14px;background:#FFF0F0;border:1px solid #F6C9C9;
+    color:#A23B3B;border-radius:12px;padding:12px 14px;font-size:.9rem;font-weight:600;
+  }
+  .foutmelding.zichtbaar{display:block;}
+
+  /* resultaat */
+  .resultaat{display:none;margin-top:22px;animation:opduiken .45s cubic-bezier(.2,.9,.3,1.2) both;}
+  .resultaat.zichtbaar{display:block;}
+  @keyframes opduiken{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+
+  .groot{
+    text-align:center;
+    background:linear-gradient(160deg,var(--geel-zacht),#F4E680);
+    border:1px solid var(--geel-diep);
+    border-radius:20px;padding:22px 18px;margin-bottom:16px;
+  }
+  .groot .mini{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--inkt-zacht);}
+  .groot .cijfer{font-size:2.15rem;font-weight:800;line-height:1.15;margin:6px 0 2px;letter-spacing:-.5px;}
+  .groot .cijfer b{color:#C98A00;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .tegel{
+    background:var(--geel-heel-zacht);border:1px solid var(--lijn);
+    border-radius:16px;padding:14px 15px;
+  }
+  .tegel .t-label{font-size:.78rem;font-weight:700;color:var(--inkt-zacht);text-transform:uppercase;letter-spacing:.6px;display:flex;align-items:center;gap:6px;}
+  .tegel .t-waarde{font-size:1.35rem;font-weight:800;margin-top:3px;}
+  .tegel .t-sub{font-size:.78rem;color:var(--inkt-zacht);margin-top:2px;}
+  .tegel.breed{grid-column:1 / -1;}
+
+  .kopieerbalk{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .kopieer{
+    flex:1;min-width:150px;border:2px solid var(--geel-diep);background:var(--wit);
+    color:var(--inkt);font-family:inherit;font-weight:700;font-size:.92rem;
+    padding:12px;border-radius:13px;cursor:pointer;transition:all .15s;
+  }
+  .kopieer:hover{background:var(--geel-heel-zacht);}
+  .kopieer.gekopieerd{background:var(--geel);border-color:var(--geel);}
+
+  .verjaardag{
+    margin-top:16px;text-align:center;font-size:.92rem;color:var(--inkt);
+    background:var(--blauw-zacht);border:1px solid var(--blauw-diep);border-radius:14px;padding:13px;
+  }
+
+  .voet{text-align:center;margin-top:22px;color:var(--inkt-zacht);font-size:.85rem;line-height:1.5;}
+  .voet b{color:var(--inkt);}
+
+  /* persoonlijk berichtje van Fien met motiverende quote */
+  .persoonlijk{
+    margin:16px auto 0;max-width:470px;
+    background:var(--geel-heel-zacht);border:1px solid var(--lijn);
+    border-radius:16px;padding:14px 18px;
+  }
+  .quote-intro{font-size:.82rem;font-weight:700;color:var(--inkt);margin-bottom:2px;}
+  .quote{
+    min-height:1.3em;font-size:.94rem;font-style:italic;color:var(--inkt-zacht);
+    transition:opacity .45s ease;
+  }
+  .quote b{color:#B98A00;font-style:normal;}
+  .ondertekening{margin-top:6px;font-size:.86rem;font-weight:700;color:#B98A00;}
+
+  /* het kalenderlogo is klikbaar (easter egg) */
+  .logo{cursor:pointer;user-select:none;}
+  .logo:active{transform:scale(.92) rotate(3deg);}
+  .logo::before{
+    content:"";position:absolute;inset:-7px;border-radius:20px;
+    border:2px solid var(--geel-diep);opacity:0;
+    animation:tik 2.8s ease-out infinite;
+  }
+  @keyframes tik{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.35);opacity:0}100%{opacity:0}}
+  .zonhint{
+    font-size:.74rem;color:var(--inkt-zacht);margin:2px 0 4px;opacity:.85;
+  }
+
+  /* TherHappy freebie/marketing-kaart onderaan */
+  .promo{
+    margin-top:24px;background:var(--wit);border:1px solid var(--lijn);
+    border-radius:22px;padding:22px 20px;text-align:center;box-shadow:var(--schaduw);
+  }
+  .promo .cadeau{font-size:1.6rem;line-height:1;margin-bottom:6px;}
+  .promo .titel{font-weight:800;font-size:1.05rem;margin-bottom:5px;}
+  .promo p{margin:0 0 15px;color:var(--inkt-zacht);font-size:.9rem;line-height:1.5;}
+  .snelknop{
+    display:inline-block;text-decoration:none;cursor:pointer;
+    background:linear-gradient(135deg,var(--geel),var(--geel-diep));
+    color:var(--inkt);font-weight:800;font-size:.98rem;
+    padding:13px 24px;border-radius:14px;box-shadow:0 6px 16px rgba(222,200,70,.5);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .snelknop:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(222,200,70,.6);}
+  .wink{
+    margin-top:15px;font-size:.83rem;color:var(--inkt-zacht);
+    min-height:1.15em;transition:opacity .45s ease;
+  }
+  .wink a{color:var(--blauw-diep);text-decoration:none;font-weight:700;}
+  .wink a:hover{text-decoration:underline;}
+
+  @media (max-width:420px){
+    .groot .cijfer{font-size:1.7rem;}
+    h1{font-size:1.45rem;}
+  }
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+  <div class="kop">
+    <div class="logo" id="logo" title="Tik eens op de kalender 😉" role="button" tabindex="0" aria-label="TherHappy kalender">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="kal"><rect x="8" y="11" width="48" height="45" rx="10"/></clipPath></defs>
+        <rect x="19.5" y="4" width="5" height="12" rx="2.5" fill="#B98A00"/>
+        <rect x="39.5" y="4" width="5" height="12" rx="2.5" fill="#B98A00"/>
+        <g clip-path="url(#kal)">
+          <rect x="8" y="11" width="48" height="45" fill="#F8EC7E"/>
+          <rect x="8" y="11" width="48" height="14" fill="#EAD54A"/>
+        </g>
+        <rect x="8" y="11" width="48" height="45" rx="10" fill="none" stroke="#E0CB53" stroke-width="2"/>
+        <path d="M32 45.5 C 19 35.5, 24 26.5, 32 32.2 C 40 26.5, 45 35.5, 32 45.5 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+    <div class="zonhint">psst, tik eens op de kalender ✨</div>
+    <h1>Leeftijdberekenaar</h1>
+    <p>Snel de exacte leeftijd bij de hand, handig voor je intake, verslag en testnormen. 💛</p>
+    <div class="persoonlijk">
+      <div class="quote-intro">Een happy boodschap voor jou:</div>
+      <div class="quote" id="quote"></div>
+    </div>
+  </div>
+
+  <div class="kaart">
+    <div class="veld">
+      <label for="geboorte">Geboortedatum</label>
+      <input type="date" id="geboorte" max="">
+    </div>
+
+    <div class="veld" style="margin-bottom:6px;">
+      <label for="referentie">Leeftijd op <span class="hint">(standaard vandaag, bv. de testdatum)</span></label>
+      <input type="date" id="referentie">
+    </div>
+    <div class="rij">
+      <button class="chip" data-set="vandaag" type="button">Vandaag</button>
+      <button class="chip" data-set="wis" type="button">Wis datum</button>
+    </div>
+
+    <button class="bereken" id="berekenBtn" type="button">Bereken leeftijd 🎉</button>
+
+    <div class="foutmelding" id="fout"></div>
+
+    <div class="resultaat" id="resultaat">
+      <div class="groot">
+        <div class="mini">Chronologische leeftijd</div>
+        <div class="cijfer" id="grootLeeftijd">…</div>
+      </div>
+
+      <div class="grid">
+        <div class="tegel">
+          <div class="t-label">🧮 Testnotatie</div>
+          <div class="t-waarde" id="tNotatie">…</div>
+          <div class="t-sub">jaren;maanden</div>
+        </div>
+        <div class="tegel">
+          <div class="t-label">📐 Decimale leeftijd</div>
+          <div class="t-waarde" id="tDecimaal">…</div>
+          <div class="t-sub">jaar (÷ 365,25)</div>
+        </div>
+        <div class="tegel">
+          <div class="t-label">📅 Totaal maanden</div>
+          <div class="t-waarde" id="tMaanden">…</div>
+          <div class="t-sub" id="tWeken">…</div>
+        </div>
+        <div class="tegel">
+          <div class="t-label">☀️ Totaal dagen</div>
+          <div class="t-waarde" id="tDagen">…</div>
+          <div class="t-sub" id="tDagenSub">…</div>
+        </div>
+      </div>
+
+      <div class="verjaardag" id="verjaardag">…</div>
+
+      <div class="kopieerbalk">
+        <button class="kopieer" id="kopVolledig" type="button">📋 Kopieer voor verslag</button>
+        <button class="kopieer" id="kopNotatie" type="button">📋 Kopieer testnotatie</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="promo">
+    <div class="cadeau">💛</div>
+    <div class="titel">Deze handige tool werd ontwikkeld door TherHappy</div>
+    <p>Ontdek via deze knop welke promo's er momenteel op therhappy.be zijn. Enkel via deze knop kan je ze scoren.</p>
+    <a class="snelknop" id="snelknop" href="https://www.therhappy.be" target="_blank" rel="noopener">Ontdek de promo's 💛</a>
+    <div class="wink" id="wink"></div>
+  </div>
+
+  <div class="voet">
+    <b>TherHappy</b> · happy minds, happy life! 💛<br>
+    Gemaakt om je werk wat lichter te maken. Leuk dat je er bent!
+  </div>
+</div>
+
+<script>
+/* ---------- datums ---------- */
+function vandaagISO(){
+  const n = new Date();
+  const mm = String(n.getMonth()+1).padStart(2,'0');
+  const dd = String(n.getDate()).padStart(2,'0');
+  return n.getFullYear()+'-'+mm+'-'+dd;
+}
+const geboorteEl = document.getElementById('geboorte');
+const refEl = document.getElementById('referentie');
+geboorteEl.max = vandaagISO();
+refEl.value = vandaagISO();
+
+/* parse yyyy-mm-dd naar lokale Date op de middag (geen tijdzone-verrassingen) */
+function parseDate(v){
+  if(!v) return null;
+  const p = v.split('-');
+  if(p.length!==3) return null;
+  return new Date(+p[0], +p[1]-1, +p[2], 12, 0, 0);
+}
+
+/* maanden optellen met correcte clamping op maandlengte */
+function voegMaandenToe(datum, n){
+  const m = datum.getMonth() + n;
+  const jaar = datum.getFullYear() + Math.floor(m/12);
+  const maand = ((m%12)+12)%12;
+  const dag = Math.min(datum.getDate(), new Date(jaar, maand+1, 0).getDate());
+  return new Date(jaar, maand, dag, 12);
+}
+/* exact verschil in jaren / maanden / dagen (robuust bij maandovergangen) */
+function verschilYMD(van, tot){
+  let maanden = (tot.getFullYear()-van.getFullYear())*12 + (tot.getMonth()-van.getMonth());
+  let anker = voegMaandenToe(van, maanden);
+  if(anker > tot){ maanden--; anker = voegMaandenToe(van, maanden); }
+  const d = Math.round((tot - anker)/86400000);
+  return { y: Math.floor(maanden/12), m: maanden%12, d };
+}
+
+function nlGetal(n, enkel, meerv){
+  return n + ' ' + (n===1 ? enkel : meerv);
+}
+
+/* ---------- chips ---------- */
+document.querySelectorAll('.chip').forEach(c=>{
+  c.addEventListener('click', ()=>{
+    if(c.dataset.set==='vandaag') refEl.value = vandaagISO();
+    if(c.dataset.set==='wis') refEl.value = '';
+  });
+});
+
+/* ---------- berekenen ---------- */
+const fout = document.getElementById('fout');
+const resultaat = document.getElementById('resultaat');
+let laatsteTekst = '';
+let laatsteNotatie = '';
+
+function toonFout(msg){
+  fout.textContent = msg;
+  fout.classList.add('zichtbaar');
+  resultaat.classList.remove('zichtbaar');
+}
+
+function bereken(){
+  fout.classList.remove('zichtbaar');
+  const gb = parseDate(geboorteEl.value);
+  let ref = parseDate(refEl.value);
+
+  if(!gb){ toonFout('Vul eerst een geboortedatum in. 💛'); return; }
+  if(!ref) ref = parseDate(vandaagISO());
+
+  if(gb > ref){ toonFout('De geboortedatum ligt ná de gekozen datum, check de datums even.'); return; }
+
+  const {y,m,d} = verschilYMD(gb, ref);
+  const totaalDagen = Math.round((ref - gb) / 86400000);
+  const totaalWeken = Math.floor(totaalDagen / 7);
+  const restDagen = totaalDagen % 7;
+  const totaalMaanden = y*12 + m;
+  const decimaal = (totaalDagen / 365.25).toFixed(2).replace('.', ',');
+
+  // groot
+  let stukken = [];
+  if(y>0) stukken.push(nlGetal(y,'jaar','jaar'));
+  stukken.push(nlGetal(m,'maand','maanden'));
+  stukken.push(nlGetal(d,'dag','dagen'));
+  document.getElementById('grootLeeftijd').innerHTML =
+    stukken.map((s,i)=> i===0 ? '<b>'+s+'</b>' : s).join(', ');
+
+  // tegels
+  document.getElementById('tNotatie').textContent = y + ';' + m;
+  document.getElementById('tDecimaal').textContent = decimaal + ' jr';
+  document.getElementById('tMaanden').textContent = totaalMaanden;
+  document.getElementById('tWeken').textContent = '≈ ' + totaalWeken.toLocaleString('nl-BE') + ' weken';
+  document.getElementById('tDagen').textContent = totaalDagen.toLocaleString('nl-BE');
+  document.getElementById('tDagenSub').textContent = totaalWeken.toLocaleString('nl-BE') + ' wk + ' + restDagen + ' d';
+
+  // volgende verjaardag
+  let volgende = new Date(ref.getFullYear(), gb.getMonth(), gb.getDate(), 12);
+  if(volgende < ref) volgende = new Date(ref.getFullYear()+1, gb.getMonth(), gb.getDate(), 12);
+  const dagenTot = Math.round((volgende - ref) / 86400000);
+  const vEl = document.getElementById('verjaardag');
+  if(dagenTot===0){
+    vEl.innerHTML = '🎂 <b>Vandaag jarig!</b> Wat een leuk toeval, proficiat namens TherHappy!';
+  } else {
+    vEl.innerHTML = '🎂 Nog <b>'+dagenTot+'</b> '+(dagenTot===1?'dag':'dagen')+' tot de volgende verjaardag (wordt dan '+(y+1)+').';
+  }
+
+  // kopieerteksten
+  laatsteTekst = 'Chronologische leeftijd: ' + stukken.join(', ') +
+    ' (' + y + ';' + m + ', ' + decimaal + ' jaar) op ' +
+    ref.toLocaleDateString('nl-BE') + '.';
+  laatsteNotatie = y + ';' + m;
+
+  resultaat.classList.add('zichtbaar');
+  nieuweQuote();
+  nieuweWink();
+  vuurConfetti(dagenTot===0);
+}
+
+document.getElementById('berekenBtn').addEventListener('click', bereken);
+[geboorteEl, refEl].forEach(el=> el.addEventListener('keydown', e=>{ if(e.key==='Enter') bereken(); }));
+
+/* ---------- kopiëren ---------- */
+function kopieer(tekst, knop, standaard){
+  const gelukt = ()=>{
+    knop.classList.add('gekopieerd');
+    const orig = standaard;
+    knop.textContent = '✅ Gekopieerd!';
+    setTimeout(()=>{ knop.textContent = orig; knop.classList.remove('gekopieerd'); }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(tekst).then(gelukt).catch(()=>fallback(tekst, gelukt));
+  } else { fallback(tekst, gelukt); }
+}
+function fallback(tekst, cb){
+  const ta = document.createElement('textarea');
+  ta.value = tekst; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); cb(); }catch(e){}
+  document.body.removeChild(ta);
+}
+document.getElementById('kopVolledig').addEventListener('click', function(){
+  if(laatsteTekst) kopieer(laatsteTekst, this, '📋 Kopieer voor verslag');
+});
+document.getElementById('kopNotatie').addEventListener('click', function(){
+  if(laatsteNotatie) kopieer(laatsteNotatie, this, '📋 Kopieer testnotatie');
+});
+
+/* ---------- vrolijke extra's: quotes, knipoogjes, easter egg ---------- */
+const quotes = [
+  "Heeft iemand je vandaag al gezegd dat je goed bezig bent? Bij deze. 💛",
+  "Kleine stappen tellen ook. Zeker die van jou.",
+  "Jij maakt echt verschil, ook op de dagen dat je het zelf niet ziet.",
+  "Even ademen. Je doet het fantastisch.",
+  "Een kind groeit pas écht als het zich gezien en gehoord voelt, en dat lukt jou.",
+  "Vandaag alweer iemand die zich veilig voelt dankzij jou.",
+  "Zorgen voor anderen is topsport voor het hart. Petje af.",
+  "Je hoeft niet perfect te zijn om waardevol te zijn.",
+  "Ook wie voor anderen zorgt, verdient af en toe een schouderklopje. Hier is die van vandaag.",
+  "Wat jij doet, doet ertoe. Echt waar.",
+  "Happy minds, happy life, dat begint ook een beetje bij jou.",
+  "Zachtheid is geen zwakte, het is jouw superkracht.",
+  "Je bent meer dan genoeg, precies zoals je nu bent.",
+  "Wees vandaag eens even lief voor jezelf. Je hebt het verdiend.",
+  "Jouw geduld is een cadeau voor iedereen om je heen.",
+  "Fouten maken betekent dat je durft. Dat siert je.",
+  "Je hoeft niet alles alleen te dragen.",
+  "Rust is geen luxe, het hoort bij goed werk.",
+  "Vertrouw op wat je al weet. Je kan meer dan je denkt.",
+  "Er zit veel kracht in de manier waarop jij dingen aanpakt.",
+  "Groeien gaat met vallen en opstaan. Jij staat telkens weer op.",
+  "Je mag trots zijn op wie je aan het worden bent.",
+  "Vandaag hoef je enkel je best te doen, en dat doe je.",
+  "Jij ziet vaak net dat ene wat een ander mist.",
+  "Je bent iemand bij wie mensen zich op hun gemak voelen.",
+  "Wat een geluk voor de mensen die jou tegenkomen.",
+  "Het is oké om het even niet te weten. Ook dan ben je goed bezig.",
+  "Jouw inzet blijft niet onopgemerkt, ook al lijkt dat soms zo.",
+  "Je bent sterker dan de moeilijkste dag die je al doorstond.",
+  "Geef jezelf de mildheid die je zo vlot aan anderen geeft.",
+  "Klein beginnen is ook beginnen.",
+  "Je verdient het om met vriendelijkheid naar jezelf te kijken.",
+  "Er is maar één jij, en die is precies goed.",
+  "Jouw aanwezigheid maakt een ruimte warmer.",
+  "Twijfelen betekent dat het je iets kan schelen. Dat is mooi.",
+  "Je bent al veel verder gekomen dan je soms beseft.",
+  "Vandaag is een goede dag om zacht te zijn voor jezelf.",
+  "Je mag er zijn, met alles erop en eraan.",
+  "Wat jij geeft, komt op de mooiste manieren terug.",
+  "Ademen, glimlachen, verdergaan. Je doet het knap.",
+  "Je hoeft je niet te bewijzen om waardevol te zijn.",
+  "De wereld heeft net jouw soort warmte nodig.",
+  "Jij bent iemand die het verschil maakt in stilte.",
+  "Ook vandaag ben je precies op de juiste plek.",
+  "Je bent geen machine. Even pauzeren mag.",
+  "Vertrouw het proces, en vooral: vertrouw jezelf.",
+  "Jouw geduld verandert meer dan je ooit zult zien.",
+  "Het is genoeg wat je vandaag doet.",
+  "Je bent goed genoeg, dat ben je altijd al geweest.",
+  "Wat fijn dat jij doet wat je doet.",
+  "Elke kleine stap brengt je dichter bij waar je wil zijn.",
+  "Je mag fier zijn op de weg die je aflegt.",
+  "Er schuilt moed in gewoon blijven proberen.",
+  "Je bent waardevol, ook als je even niets presteert.",
+  "Wees de vriend voor jezelf die je voor anderen bent.",
+  "Jouw zachte kant is precies wat de wereld nodig heeft.",
+  "Vandaag mag je even op jezelf trots zijn.",
+  "Je doet ertoe, gewoon door er te zijn.",
+  "Het hoeft niet groots. Klein en warm is ook genoeg.",
+  "Je hebt vandaag al meer betekend dan je denkt.",
+  "Geloof in de kracht die je vaak zelf niet ziet.",
+  "Jij bent iemand die anderen doet groeien.",
+  "Zelfs op je stilste dagen straal je iets warms uit.",
+  "Wat je zaait aan geduld, bloeit ergens verder open.",
+  "Je bent niet te veel en niet te weinig. Je bent juist goed.",
+  "Vergeef jezelf de dagen die niet vlot liepen.",
+  "Er zit wijsheid in weten wanneer je even mag rusten.",
+  "Jouw luisterend oor is goud waard.",
+  "Je bent meer dan wat je op een dag afkrijgt.",
+  "Kijk eens met trots naar wat je al overwon.",
+  "Je mag zacht landen na een drukke dag.",
+  "Vandaag telt ook als je enkel volhield.",
+  "Je bent iemand bij wie mensen zichzelf durven zijn.",
+  "Wat een cadeau dat jij zo betrokken bent.",
+  "Je waarde hangt niet af van wat je afvinkt.",
+  "Rust nemen is ook vooruitgaan.",
+  "Jij mag stralen, gewoon omdat je er bent.",
+  "Klein zijn in eigen ogen betekent niet klein zijn.",
+  "Je bent de moeite waard, elke dag opnieuw.",
+  "Geef jezelf toestemming om trots te zijn.",
+  "Wat jij doet met liefde, blijft ergens hangen.",
+  "Je hoeft niet harder te lopen om genoeg te zijn.",
+  "Er is kracht in jouw zachtheid, echt.",
+  "Vandaag is een goede dag om mild te zijn voor jezelf.",
+  "Je doet je best, en dat is meer dan genoeg.",
+  "Jouw glimlach kan iemands hele dag dragen.",
+  "Wees trots, niet omdat het perfect was, maar omdat je het deed.",
+  "Je bent iemand die anderen hoop geeft.",
+  "Ook je twijfels horen bij je groei.",
+  "Je mag vertrouwen op je eigen tempo.",
+  "Wat jij uitstraalt, raakt meer mensen dan je weet.",
+  "Je bent goed bezig, ook als het niet zo voelt.",
+  "Klein succes is ook succes. Vier het gerust.",
+  "Je verdient rust zonder je schuldig te voelen.",
+  "Jouw aanwezigheid is al een geschenk.",
+  "Er woont veel moed in jouw dagelijkse doen.",
+  "Je bent waardevol, en dat blijft zo.",
+  "Vandaag mag je gewoon zijn wie je bent.",
+  "Wat jij geeft aan aandacht, is nooit verloren.",
+  "Je bent sterker en zachter dan je zelf gelooft.",
+  "Geloof maar in jezelf, wij doen dat allang.",
+  "Je mag fouten maken en toch fantastisch zijn.",
+  "Elke dag dat je het opnieuw probeert, is er een om trots op te zijn.",
+  "Je bent niet je moeilijkste moment.",
+  "Jouw warmte maakt de wereld een beetje zachter.",
+  "Wat je vandaag deed, was genoeg.",
+  "Je hoeft niemand anders te zijn dan jezelf.",
+  "Er is iets moois aan hoe jij doorzet.",
+  "Je verdient dezelfde vriendelijkheid die je uitdeelt.",
+  "Vandaag mag je even op de pauzeknop duwen.",
+  "Jij ziet het goede in anderen. Zie het ook in jezelf.",
+  "Je bent kostbaar, ook op je gewone dagen.",
+  "Vertrouwen groeit met elke stap die je zet.",
+  "Je doet er echt toe, meer dan woorden kunnen zeggen.",
+  "Klein en oprecht wint het van groots en gehaast.",
+  "Je mag zacht zijn voor de mens die je bent.",
+  "Wat een verschil maak jij, gewoon door te geven om anderen.",
+  "Je bent genoeg, ook als de dag rommelig was.",
+  "Geef jezelf vandaag een complimentje. Je verdient het.",
+  "Jouw geduld is een stille superkracht.",
+  "Je hoeft niet alles te kunnen om waardevol te zijn.",
+  "Er schuilt kracht in hoe jij blijft geloven in mensen.",
+  "Vandaag ben je precies goed zoals je bent.",
+  "Je bouwt aan iets moois, stap voor stap.",
+  "Wees trots op de zorg die je in dingen stopt.",
+  "Je bent iemand die licht brengt op grijze dagen.",
+  "Ook rusten hoort bij groeien.",
+  "Je mag jezelf zien met vriendelijke ogen.",
+  "Wat jij doet, verdient meer erkenning dan je krijgt.",
+  "Je bent waardevol, niet om wat je doet, maar om wie je bent.",
+  "Elke keer dat je opnieuw begint, ben je moedig.",
+  "Je hoeft niet groot te denken om groot te betekenen.",
+  "Jouw zachtaardigheid verandert meer dan je vermoedt.",
+  "Vandaag is genoeg als je gewoon volhield.",
+  "Je mag trots zijn op je veerkracht.",
+  "Wat jij in stilte doet, laat sporen na.",
+  "Je bent de moeite, altijd.",
+  "Geef jezelf toestemming om te groeien in je eigen tempo.",
+  "Je bent iemand op wie anderen kunnen bouwen.",
+  "Ook op je twijfeldagen ben je goed bezig.",
+  "Jouw hart zit op de juiste plek, dat merk je aan alles.",
+  "Je verdient het om zacht met jezelf om te gaan.",
+  "Wat je gaf aan warmte vandaag, telt echt mee.",
+  "Je bent sterker dan de lat die je jezelf oplegt.",
+  "Klein durven is ook durven.",
+  "Je mag er trots op zijn dat je blijft leren.",
+  "Jouw aanwezigheid stelt mensen gerust.",
+  "Je bent genoeg, vandaag en elke dag.",
+  "Wat jij zaait, groeit vaak buiten je zicht.",
+  "Je hoeft je niet te haasten om waardevol te zijn.",
+  "Er is moed voor nodig om te blijven geven zoals jij doet.",
+  "Je mag met mildheid terugkijken op je dag.",
+  "Je bent iemand die anderen doet stralen.",
+  "Vandaag mag je gewoon ademen en er zijn.",
+  "Wat jij doet met hart, blijft hangen bij mensen.",
+  "Je bent kostbaar, ook als niemand het even zegt.",
+  "Geloof in je eigen kunnen, het is er echt.",
+  "Je verdient een dag zonder te veel van jezelf te vragen.",
+  "Jouw geduld maakt de wereld een stukje warmer.",
+  "Je bent goed bezig, precies zoals je bezig bent.",
+  "Elke stap vooruit is de moeite waard, hoe klein ook.",
+  "Je mag jezelf vandaag eens vieren.",
+  "Wat jij betekent voor anderen, is niet in cijfers te vatten.",
+  "Je bent meer dan je drukste gedachten.",
+  "Er woont zachtheid in jou die anderen goeddoet.",
+  "Je hoeft niet te presteren om te mogen bestaan.",
+  "Vandaag ben je genoeg, gewoon door er te zijn.",
+  "Je draagt meer bij dan je ooit zult zien.",
+  "Wees trots op je moed om te blijven proberen.",
+  "Je bent iemand die warmte achterlaat waar je komt.",
+  "Ook een rustige dag mag genoeg zijn.",
+  "Je mag geloven in je eigen groei.",
+  "Jouw manier van kijken naar mensen is een geschenk.",
+  "Je bent waardevol, ook op je stille dagen.",
+  "Wat je vandaag gaf, was precies genoeg.",
+  "Je hoeft niet sterk te zijn om goed te zijn.",
+  "Er is iets moois aan jouw doorzettingsvermogen.",
+  "Je verdient het om trots op jezelf te zijn.",
+  "Je bent iemand die anderen doet ademhalen.",
+  "Vandaag mag je zacht zijn, met jezelf voorop.",
+  "Wat jij doet, doet er meer toe dan je denkt.",
+  "Je bent genoeg, ook zonder iets te bewijzen.",
+  "Geloof in de weg die je aan het gaan bent.",
+  "Je mag jezelf met dezelfde warmte behandelen die je uitdeelt.",
+  "Jouw kleine gebaren maken een groot verschil.",
+  "Je bent kostbaar, precies zoals je bent.",
+  "Ook vandaag ben je iemand om dankbaar voor te zijn.",
+  "Je hoeft niet perfect te zijn, gewoon jij zijn is mooi genoeg.",
+  "Er schuilt kracht in hoe zacht jij kan zijn.",
+  "Je verdient rust, ruimte en een vriendelijke blik.",
+  "Wat jij doet met liefde, laat de wereld beter achter.",
+  "Je bent goed bezig, en dat mag je van jezelf horen.",
+  "Elke dag ben jij iemands lichtpuntje, of je het nu merkt of niet.",
+  "Je mag trots zijn, gewoon omdat je het blijft doen.",
+  "Jouw warmte is nooit vanzelfsprekend, en altijd welkom.",
+  "Je bent meer dan genoeg, vandaag en morgen.",
+  "Wat je gaf aan aandacht, komt ergens tot bloei.",
+  "Je hoeft niet luid te zijn om betekenis te hebben.",
+  "Geef jezelf vandaag wat extra zachtheid. Je verdient het.",
+  "Leuk dat jij er bent. De wereld is warmer met jou erin. 💛"
+];
+const winks = [
+  '🤫 Tussen ons: met de <a href="https://www.therhappy.be/webshop" target="_blank" rel="noopener">Babbelkaartjes</a> wordt zo\'n gesprek meteen luchtiger.',
+  '🎴 Psst, <a href="https://www.therhappy.be/webshop" target="_blank" rel="noopener">Gevoelens onder de loep</a> is een vaste favoriet in de praktijk.',
+  '💡 Vastgelopen met een casus? Er is ook <a href="https://www.therhappy.be/voor-professionals" target="_blank" rel="noopener">supervisie</a> op maat.',
+  '📥 Wist je dat er ook gratis <a href="https://www.therhappy.be/gratis" target="_blank" rel="noopener">werkbladen en posters</a> klaarstaan?',
+  '📸 Meer speelse ideeën? Volg <a href="https://www.instagram.com/therhappy.helpdesk" target="_blank" rel="noopener">@therhappy.helpdesk</a> voor collega\'s.',
+  '🎓 Twijfel over je intake? De cursus <a href="https://www.therhappy.be/voor-professionals" target="_blank" rel="noopener">"Help! Hoe neem ik een intake af?"</a> helpt je op weg.'
+];
+const quoteEl = document.getElementById('quote');
+const winkEl  = document.getElementById('wink');
+let qVorige = -1, wVorige = -1;
+
+function kiesIndex(arr, vorige){
+  if(arr.length < 2) return 0;
+  let i; do { i = (Math.random()*arr.length)|0; } while(i === vorige);
+  return i;
+}
+function faseTekst(el, html){
+  el.style.opacity = 0;
+  setTimeout(()=>{ el.innerHTML = html; el.style.opacity = 1; }, 200);
+}
+function nieuweQuote(){ qVorige = kiesIndex(quotes, qVorige); faseTekst(quoteEl, quotes[qVorige]); }
+function nieuweWink(){ wVorige = kiesIndex(winks, wVorige); faseTekst(winkEl, winks[wVorige]); }
+
+/* klik op de kalender: confetti plus een nieuwe happy boodschap */
+const logoEl = document.getElementById('logo');
+function logoKlik(){
+  spawnConfetti({bron:'midden', y: window.innerHeight*0.18, factor:.7});
+  nieuweQuote();
+}
+logoEl.addEventListener('click', logoKlik);
+logoEl.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); logoKlik(); } });
+
+/* toon meteen bij het openen een quote en een knipoog */
+nieuweQuote();
+nieuweWink();
+
+/* ---------- confetti (eigen, in TherHappy-tinten) ---------- */
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+let deeltjes = [];
+let animLoopt = false;
+
+function schaal(){
+  canvas.width = window.innerWidth * devicePixelRatio;
+  canvas.height = window.innerHeight * devicePixelRatio;
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+}
+schaal();
+window.addEventListener('resize', schaal);
+
+const kleuren = ['#F8EC7E','#EAD54A','#9DD5F9','#FDB2E8','#009E23','#FFFFFF'];
+const hartkans = 0.18;
+
+function spawnConfetti(opts){
+  opts = opts || {};
+  const W = window.innerWidth, H = window.innerHeight;
+  const basis = W < 480 ? 80 : 130;
+  const aantal = Math.round(basis * (opts.factor || 1));
+  const oy = opts.y !== undefined ? opts.y : H*0.62;
+  for(let i=0;i<aantal;i++){
+    let x, vx;
+    if(opts.bron === 'midden'){
+      x = W*0.5; vx = (Math.random()-0.5)*15;
+    } else {
+      const vanLinks = Math.random() < 0.5;
+      x = vanLinks ? W*0.15 : W*0.85;
+      vx = (vanLinks ? 1 : -1) * (Math.random()*7 + 3);
+    }
+    deeltjes.push({
+      x, y: oy, vx,
+      vy: -(Math.random()*13 + 9),
+      g: 0.32 + Math.random()*0.12,
+      grootte: Math.random()*7 + 5,
+      kleur: kleuren[(Math.random()*kleuren.length)|0],
+      hart: Math.random() < hartkans,
+      rot: Math.random()*Math.PI*2,
+      vr: (Math.random()-0.5)*0.3,
+      leven: 0,
+      max: 130 + Math.random()*50
+    });
+  }
+  if(!animLoopt){ animLoopt = true; requestAnimationFrame(tick); }
+}
+/* dubbele pop; bij een verjaardag een extra feestsalvo */
+function vuurConfetti(feest){
+  spawnConfetti({});
+  setTimeout(()=> spawnConfetti({bron:'midden', y: window.innerHeight*0.5, factor:.6}), 160);
+  if(feest){
+    setTimeout(()=> spawnConfetti({bron:'midden', y: window.innerHeight*0.42, factor:1}), 320);
+    setTimeout(()=> spawnConfetti({factor:.8}), 480);
+  }
+}
+
+function tekenHart(x,y,s,rot,kleur){
+  ctx.save();
+  ctx.translate(x,y); ctx.rotate(rot); ctx.scale(s/16, s/16);
+  ctx.fillStyle = kleur;
+  ctx.beginPath();
+  ctx.moveTo(0,4);
+  ctx.bezierCurveTo(0,1,-5,-4,-8,0);
+  ctx.bezierCurveTo(-12,5,-4,11,0,14);
+  ctx.bezierCurveTo(4,11,12,5,8,0);
+  ctx.bezierCurveTo(5,-4,0,1,0,4);
+  ctx.fill();
+  ctx.restore();
+}
+
+function tick(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  deeltjes = deeltjes.filter(p=> p.leven < p.max && p.y < window.innerHeight+40);
+  deeltjes.forEach(p=>{
+    p.vy += p.g; p.x += p.vx; p.y += p.vy; p.vx *= 0.99;
+    p.rot += p.vr; p.leven++;
+    const alpha = p.leven > p.max-40 ? Math.max(0,(p.max-p.leven)/40) : 1;
+    ctx.globalAlpha = alpha;
+    if(p.hart){
+      tekenHart(p.x, p.y, p.grootte*1.6, p.rot, p.kleur);
+    } else {
+      ctx.save();
+      ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.kleur;
+      ctx.fillRect(-p.grootte/2, -p.grootte/2, p.grootte, p.grootte*0.6);
+      ctx.restore();
+    }
+  });
+  ctx.globalAlpha = 1;
+  if(deeltjes.length > 0){ requestAnimationFrame(tick); }
+  else { animLoopt = false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+}
+</script>
+</body>
+</html>

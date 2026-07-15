@@ -1,0 +1,40 @@
+TherHappy Leeftijdberekenaar — jouw freebie klaar om te delen
+============================================================
+
+Wat zit er in dit mapje?
+- index.html            de app zelf
+- manifest.webmanifest  zorgt dat de app netjes installeert op de telefoon
+- icon-192.png          het app-icoon (kleiner)
+- icon-512.png          het app-icoon (groter)
+
+Houd deze vier bestanden altijd samen in één mapje. Dan werkt alles vanzelf.
+
+------------------------------------------------------------
+Zo zet je het online (kies één manier)
+------------------------------------------------------------
+
+MANIER 1: supersnel, zonder gedoe (aanrader om te testen)
+1. Ga naar app.netlify.com/drop in je browser.
+2. Sleep dit volledige mapje in het vak op die pagina.
+3. Je krijgt meteen een link. Dat is de link naar jouw tool.
+   Tip: maak gratis een account aan als je de link wil bewaren.
+
+MANIER 2: op je eigen website therhappy.be
+1. Upload de vier bestanden naar een mapje op je website,
+   bijvoorbeeld therhappy.be/leeftijd.
+2. De link naar de tool is dan therhappy.be/leeftijd.
+   Vraag dit gerust aan wie je website beheert.
+
+MANIER 3: via GitHub Pages (gratis, iets technischer)
+   Laat het me weten als je deze weg wil, dan leg ik het stap voor stap uit.
+
+------------------------------------------------------------
+Zo deel je het als freebie
+------------------------------------------------------------
+- Deel de link via je nieuwsbrief, Instagram of in een mailtje.
+- Vul diezelfde link in op het stappenplan (de PDF) bij "Mijn link naar de tool".
+- Wie de link opent, kan de tool op het beginscherm zetten en als app gebruiken.
+  De uitleg daarvoor staat in het stappenplan, voor iPhone en Android.
+
+Veel plezier ermee! 💛
+TherHappy · happy minds, happy life!
